@@ -21,7 +21,9 @@ variable "PATH_TO_PRIVATE_KEY" {
 variable "INSTANCE_USERNAME" {
   default = "ubuntu"
 }
-
+variable "DEVICE_NAME"{
+  default = "/dev/xvdh"
+}
 
 
 

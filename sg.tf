@@ -20,7 +20,7 @@ resource "aws_security_group" "allow_tls" {
     from_port = "22"
     to_port = "22"
     protocol = "tcp"
-    cidr_blocks = ["18.191.176.16/32"]
+    cidr_blocks = ["18.222.121.197/32"]
   }
   tags = {
     CreateDate = "${data.aws_ip_ranges.from_us-east.create_date}"

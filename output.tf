@@ -1,5 +1,5 @@
 output "public-ip" {
-  value = "${aws_instance.my_instance.public_ip}"
+  value = "${aws_instance.my-instance.public_ip}"
 }
 
 output "keyname"{
@@ -16,4 +16,8 @@ output "vpc-name"{
 
 output "public-subnet-name"{
   value = "aws_subnet.public-1.name"
+}
+
+output "ext-vol-id"{
+  value = "aws_ebs_volume.ext-vol1.id"
 }
