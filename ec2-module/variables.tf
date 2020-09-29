@@ -1,3 +1,18 @@
+variable "name" {
+  type    = string
+  default = ""
+}
+
+variable "default" {
+  default = "Temp"
+}
+
+variable "sg_ports"{
+  type = list(number)
+  description = "ports to be open"
+  default = [22, 8300, 8301, 8302]
+}
+
 /*
 variable "type"{
   type = list
@@ -15,19 +30,4 @@ variable "type" {
 
 variable "isdev" {
   type = string
-}
-
-variable "name" {
-  type    = string
-  default = ""
-}
-
-variable "default" {
-  default = "Temp"
-}
-
-variable "sg_ports"{
-  type = list(number)
-  description = "ports to be open"
-  default = [22, 8300, 8301, 8302]
 }

@@ -20,7 +20,7 @@ resource "aws_instance" "dev" {
     command = "the server's IP address is {self.private_ip}"
   }
 
-  provisioner "remote-exec "{
+  provisioner "remote-exec" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install nginx",
