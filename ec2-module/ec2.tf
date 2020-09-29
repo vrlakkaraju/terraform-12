@@ -10,7 +10,7 @@ resource "aws_instance" "dev" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.type["us-west-2"]
   tags          = local.tags
-  security_groups = ["${aws_security_group.sg1.id}"]
+  vpc_security_group_ids = ["${aws_security_group.sg1.id}"]
 
   #  tags = {
   #    Name = "myec2-${count.index}"
