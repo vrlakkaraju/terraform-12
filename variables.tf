@@ -29,5 +29,5 @@ variable "default" {
 variable "sg_ports"{
   type = list(number)
   description = "ports to be open"
-  default = [8300, 8301, 8302]
+  default = [22, 8300, 8301, 8302]
 }
