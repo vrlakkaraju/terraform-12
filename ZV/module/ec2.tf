@@ -7,6 +7,7 @@ locals {
 }
 
 resource "aws_instance" "dev" {
+  depends_on = ["aws_key_pair.ec2key"]
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.type["us-west-2"]
   tags          = local.tags
@@ -17,7 +18,7 @@ resource "aws_instance" "dev" {
   #  }
 
   provisioner "local-exec" {
-    command = "the server's IP address is {self.private_ip}"
+    command = "echo {aws_instance.dev.private_ip} >> ec2_private_ip.txt"
   }
 
   provisioner "remote-exec" {
@@ -31,8 +32,8 @@ resource "aws_instance" "dev" {
   connection {
     type = "ssh"
     user = "ec2-user"
-    private_key = file("${aws_key_pair.ec2key}")
-    host = "${self.private_ip}"
+    private_key = "${file("../.ssh/id_rsa")}"
+    host = "${self.public_ip}"
   }
 }
 

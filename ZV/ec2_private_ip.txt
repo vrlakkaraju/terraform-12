@@ -1,0 +1,3 @@
+{aws_instance.dev.private_ip}
+{aws_instance.dev.private_ip}
+{aws_instance.dev.private_ip}
